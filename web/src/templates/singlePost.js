@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Img from "gatsby-image";
 import Layout from "../components/Layout";
@@ -14,7 +14,7 @@ export const query = graphql`
         slug
         featureImage {
           childImageSharp {
-            fluid(maxWidth: 1500, maxHeight: 500) {
+            fluid(maxWidth: 600, maxHeight: 600) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -24,15 +24,19 @@ export const query = graphql`
   }
 `;
 
-const singlePost = (props) => {
+const singlePost = ({ data, pageContext }) => {
+  // console.log(pageContext)
+  const { prev, next } = pageContext;
   return (
     <Layout>
-      <Img
-        fluid={props.data.mdx.frontmatter.featureImage.childImageSharp.fluid}
-      />
-      <h1>{props.data.mdx.frontmatter.title}</h1>
-      <p>{props.data.mdx.frontmatter.date}</p>
-      <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
+      <Img fluid={data.mdx.frontmatter.featureImage.childImageSharp.fluid} />
+      <h1>{data.mdx.frontmatter.title}</h1>
+      <p>{data.mdx.frontmatter.date}</p>
+      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <div>
+        <Link to={prev && `/blog/${prev.node.frontmatter.slug}`}>Previous: {prev && prev.node.frontmatter.title} </Link>
+        <Link to={next && `/blog/${next.node.frontmatter.slug}`}>Next: {next && next.node.frontmatter.title}</Link>
+      </div>
     </Layout>
   );
 };

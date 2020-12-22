@@ -10,6 +10,7 @@ module.exports.createPages = async function ({ actions, graphql }) {
           node {
             frontmatter {
               slug
+              title
             }
             id
           }
@@ -39,13 +40,22 @@ module.exports.createPages = async function ({ actions, graphql }) {
   })
 
   // Create single post
-  data.allMdx.edges.forEach((edge) => {
+  const posts = data.allMdx.edges;
+  posts.forEach((edge, index) => {
+    // console.log(edge)
     const slug = edge.node.frontmatter.slug;
     const id = edge.node.id;
+    const title = edge.node.frontmatter.title;
     createPage({
       component: path.resolve("./src/templates/singlePost.js"),
       path: `/blog/${slug}`,
-      context: { id: id, slug: slug },
+      context: { 
+        id: id,
+        slug: slug,
+        prev: index === 0 ? null : posts[index-1],
+        next: index === (posts.length - 1 )? null :  posts[index + 1],
+        title,
+      },
     });
   });
 };
