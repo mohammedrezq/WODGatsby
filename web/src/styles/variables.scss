@@ -1,0 +1,21 @@
+// Global FontSize
+$gloabl_fontSize: 10px;
+
+// Colors
+$dark: #111111;
+$red: #ff4949;
+$blue: rgb(0, 105, 146);
+$grey: #efefef;
+$darkGrey: #353535;
+$white: #ffffff;
+
+@mixin LinkWOD {
+  text-decoration: none;
+  display: block;
+  color: $dark;
+
+  &:hover {
+    text-decoration: underline $dark;
+    color: $darkGrey;
+  }
+}

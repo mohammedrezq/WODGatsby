@@ -1,0 +1,23 @@
+@import "../styles/global.scss";
+
+.contentContainer {
+  min-height: calc(100vh - 200px);
+  // padding: 0 3rem;
+
+  @media(max-width: 900px) {
+    padding: 0;
+  }
+}
+
+.Footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //  display: Dflex;
+  // justify-content: center;
+  // align-items: center;
+  background-color: $dark;
+  font-size: 2rem;
+  height: 200px;
+}

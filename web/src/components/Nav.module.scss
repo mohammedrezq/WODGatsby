@@ -1,0 +1,58 @@
+@import "../styles/variables.scss";
+
+nav {
+  // direction: rtl; // For Arabic Support
+  padding: 12px 2rem;
+  border-bottom: 1px solid #80808029;
+  background-color: rgb(253, 253, 253);
+  .linkList {
+    margin-top: 1rem;
+
+    @media (max-width: 1200px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      display: flex;
+
+      li {
+        margin-right: 1.3rem;
+        a {
+          font-size: clamp(2rem, 2vw, 2.3rem);
+          @include LinkWOD;
+
+          @media (max-width: 800px) {
+            font-size: 2rem;
+          }
+          &[aria-current="page"] {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .logo {
+    font-family: "Almarai", sans-serif;
+    font-weight: 600;
+    color: $dark;
+    padding-top: 12px;
+
+    @media (max-width: 1200px) {
+      text-align: center;
+      transition: 0.5 ease;
+    }
+
+    a {
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      text-decoration: none;
+      display: block;
+      color: $dark;
+    }
+  }
+}

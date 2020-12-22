@@ -1,0 +1,36 @@
+@import "../styles/variables.scss";
+
+.cardContainer {
+  // width: clamp(34rem, 90vw, 35rem);
+  height: 100%;
+  // background-color: $grey;
+  padding: 10px 0;
+  margin: 10px;
+
+  h2, h3,
+  p {
+    margin: 0;
+    line-height: 1.375;
+  }
+
+  .headBlog{
+    margin: 0 0 5px 0;
+  }
+  // .cardImage {
+    //   height: 400px;
+  // }
+  
+  .excerptContent {
+    h2,
+    p {
+      margin: 0;
+      line-height: 1.675;
+    }
+  }
+}
+
+.gatsby-image-wrapper {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}

@@ -1,0 +1,18 @@
+.blogsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax( 300px, 1fr));
+  gap: 2rem;
+  grid-auto-rows: auto auto 500px;
+  place-content: center;
+  margin-top: 1rem;
+
+
+  // .blogGridItem {
+  //   grid-template-rows: auto auto 1fr;
+  //   grid-template-rows: subgrid;
+  //   display: grid;
+  //   justify-content: center;
+  //   align-items: center;
+  //   margin-bottom: 2rem;
+  // }
+}
