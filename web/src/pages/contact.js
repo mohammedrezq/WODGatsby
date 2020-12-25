@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 import contactStyles from "./contact.module.scss";
 
 const ContactPage = () => {
@@ -34,9 +35,11 @@ const ContactPage = () => {
   }
 
   return (
+    <>
+    <SEO title="تواصل معنا" />
     <Layout>
       <div className="outer">
-        <h1>Contact</h1>
+        <h1>تواصل معنا</h1>
         <div>
           <p>
             If you have any questions please don't hesitate to contact me via
@@ -56,11 +59,11 @@ const ContactPage = () => {
             <legend>Contact Form</legend>
             <div>
               <label htmlFor="name">
-                <span>Name</span>
+                <span>الاسم</span>
                 <input
                   type="text"
                   name="name"
-                  placeholder="Your Name"
+                  placeholder="الاسم"
                   className={contactStyles.contactName}
                   id="name"
                   value={Name}
@@ -70,11 +73,11 @@ const ContactPage = () => {
             </div>
             <div>
               <label htmlFor="email">
-                <span>Email</span>
+                <span>الإيميل</span>
                 <input
                   type="email"
                   name="email"
-                  placeholder="Your Email"
+                  placeholder="الإيميل"
                   className={contactStyles.contactEmail}
                   id="email"
                   value={Email}
@@ -90,7 +93,7 @@ const ContactPage = () => {
                   name="message"
                   id="message"
                   className={contactStyles.messageTextArea}
-                  placeholder="Your Message..."
+                  placeholder="اكتب رسالتك هنا ..."
                   value={Message}
                   onChange={messageState}
                 />
@@ -104,12 +107,13 @@ const ContactPage = () => {
               value={MessageNightWatch}
               onChange={messageNightWatchState}
             />
-            <button type="submit">Submit</button>
-            <input type="reset" value="Reset" onClick={clearFields} />
+            <button type="submit">ارسل</button>
+            <input type="reset" value="امسح" onClick={clearFields} />
           </fieldset>
         </form>
       </div>
     </Layout>
+    </>
   );
 };
 

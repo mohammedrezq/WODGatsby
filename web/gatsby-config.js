@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "Webmaster Online Development",
+    title: "موقع تطوير الويب والتطبيقات",
     siteUrl: "https://www.webmasteronlinedev.com",
-    description: "web development services",
-    author: "Mohammed Rezq",
+    description: "موقع مطور الويب يقدم خدمات ومحتوى للمهتمين بمجال الويب وتطبيقات الويب والهواتف الذكية",
+    author: "محمد رزق",
     twitter: "@mohammedrezq2",
   },
   plugins: [

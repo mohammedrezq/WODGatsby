@@ -12,6 +12,10 @@ body {
   box-sizing: border-box;
 }
 
+html[lang="ar"] {
+  direction: rtl;
+}
+
 html {
   font-size: $gloabl_fontSize;
   font-family: "Almarai", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

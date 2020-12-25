@@ -19,7 +19,8 @@ const CardBlog = ({ title, excerpt, date, featureImage, href }) => {
         <p>{date}</p>
         <p>{excerpt}</p>
         <div className={CardBlogStyle.readMoreContent}>
-          <Link to={href}>Read more...</Link>
+          {/* <Link to={href}>Read more...</Link> */}
+          <Link to={href}>اقرأ المزيد ...</Link>
         </div>
       </div>
     </div>

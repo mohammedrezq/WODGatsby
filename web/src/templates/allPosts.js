@@ -20,7 +20,7 @@ const allPosts = ({ pageContext, data }) => {
 
   return (
     <>
-    <SEO title="Blog" />
+    <SEO title="المدونة" />
     <Layout>
       <div className={AllPostsStyles.blogsGrid}>
         {posts.map((blogPost, index) => {

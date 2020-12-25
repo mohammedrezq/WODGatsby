@@ -79,7 +79,7 @@ const singlePost = ({ data, pageContext }) => {
             </div>
             {data.mdx.tableOfContents.items && (
               <div className={singlePostStyles.contentTable}>
-                <h2>Table Of Content</h2>
+                <h2>جدول المحتوى</h2>
                 <ul>
                   {data.mdx.tableOfContents.items.map((item) => {
                     return (
@@ -98,14 +98,14 @@ const singlePost = ({ data, pageContext }) => {
               {prev && (
                 <Link className={singlePostStyles.prevPostLink} to={`/blog/${prev?.node.frontmatter.slug}`}>
                   <div>
-                   ⬅ Previous: {prev?.node.frontmatter.title}{" "} 
+                    السابق: {prev?.node.frontmatter.title}{" "} 
                   </div>
                 </Link>
               )}
               {next && (
                 <Link className={singlePostStyles.nextPostLink} to={`/blog/${next?.node.frontmatter.slug}`}>
                   <div>
-                    Next: {next?.node.frontmatter.title} ➡
+                   التالي: {next?.node.frontmatter.title}
                   </div>
                 </Link>
               )}

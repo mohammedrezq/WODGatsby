@@ -24,22 +24,22 @@ const Nav = () => {
       <div className={NavStyles.linkList}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">الرئيسية</Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog">المدونة</Link>
           </li>
           <li>
-            <Link to="/services">Services</Link>
+            <Link to="/services">الخدمات</Link>
           </li>
           <li>
             <Link to="/tags">Tags</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">عنا</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact">اتصل بنا</Link>
           </li>
         </ul>
       </div>

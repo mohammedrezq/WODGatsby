@@ -15,7 +15,8 @@ const SEO = ({children, location, description, title, image}) => {
     `)
     return (
         <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
-            <html lang="en" />
+            {/* <html lang="en" /> */}
+            <html lang="ar" />
             <title>{title}</title>
             {/* Fav Icons */}
             <link rel="icon" type="img/svg+xml" href="/static/favicon.svg" />

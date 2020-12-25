@@ -30,7 +30,7 @@ module.exports.createPages = async function ({ actions, graphql }) {
 
 
   // Create paginatied pages for posts
-  const postsPerPage = 4;
+  const postsPerPage = 12;
 
   const numPages = Math.ceil(data.allPosts.edges.length / postsPerPage);
 
