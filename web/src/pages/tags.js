@@ -17,12 +17,12 @@ export const pageQuery = graphql`
 `;
 
 const TagsPage = ({ data }) => {
-  console.log(data);
+  // console.log(data);
 
   const {
     allMdx: { group },
   } = data;
-  console.log(group);
+  // console.log(group);
   return (
     <>
     <SEO title="All Tags" />

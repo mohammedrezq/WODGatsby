@@ -36,7 +36,7 @@ export const query = graphql`
 
 const singlePost = ({ data, pageContext }) => {
   const { prev, next } = pageContext;
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <SEO title={data.mdx.frontmatter.title} />
