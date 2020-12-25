@@ -1,3 +1,5 @@
+@import "../styles/variables.scss";
+
 .blogsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -5,6 +7,25 @@
   grid-auto-rows: auto auto 500px;
   place-content: center;
   margin-top: 1rem;
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1.7rem;
+  }
+
+  a {
+    color: lighten($darkGrey, 15%);
+    font-size: 1.7rem;
+  }
+
+  a:hover {
+    color: $dark;
+    text-decoration: underline;
+    transition: 0.1s ease-in-out;
+  }
 
   // .blogGridItem {
   //   grid-template-rows: auto auto 1fr;

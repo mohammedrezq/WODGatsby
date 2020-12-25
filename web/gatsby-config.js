@@ -17,11 +17,22 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/icon.png",
+        name: `Webmaster Online Development`,
+        short_name: `WOD`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#000000`,
+        display: `standalone`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        precachePages: ['/*'],
       },
     },
     // "gatsby-transformer-remark",
@@ -30,6 +41,7 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
+          `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-images`,
             options: {

@@ -1,0 +1,40 @@
+form {
+    margin: 30px;
+
+    @media(max-width: 900px) {
+        margin: 40px 0
+    }
+  fieldset {
+    padding: 0.35em 1.75em 0.625em;
+    border-radius: 15px;
+    background: #fafafa;
+
+    legend {
+      background: #f6f6f6;
+      padding: 13px;
+      border: 1px solid;
+      margin-bottom: 20px;
+    }
+
+    .contactName,
+    .contactEmail {
+        height: 40px;
+    }
+
+    .contactName,
+    .contactEmail,
+    .messageTextArea {
+      width: 100%;
+      font-size: 2rem;
+    }
+
+    .messageTextArea {
+        margin-top: 25px;
+    }
+
+    .orderNightWatch {
+        display: none;
+      }
+      
+  }
+}

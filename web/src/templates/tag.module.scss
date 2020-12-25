@@ -1,0 +1,33 @@
+@import "../styles/variables.scss";
+
+.tagContainer {
+  padding: 0 20px;
+
+  ul {
+    a {
+      color: lighten($dark, 35%);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $dark;
+      text-decoration: underline;
+    }
+  }
+
+  .allTagsList {
+    margin: 10px;
+
+    a {
+      margin: 5px;
+      color: $dark;
+      text-decoration: none;
+      padding: 8px;
+      font-size: 2.5rem;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}

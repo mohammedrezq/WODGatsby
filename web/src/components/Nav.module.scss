@@ -30,6 +30,10 @@ nav {
           @media (max-width: 800px) {
             font-size: 2rem;
           }
+          @media (max-width: 400px) {
+            font-size: 1.4rem;
+            flex-wrap: wrap;
+          }
           &[aria-current="page"] {
             text-decoration: underline;
           }

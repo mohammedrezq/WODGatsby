@@ -2,20 +2,21 @@
 @import "../styles/variables.scss";
 
 .wodFooter {
-  text-align: center;
+  // text-align: center;
   // background-color: $darkGrey;
   color: $white;
 }
 .wodSubFooter {
-  color: $white;
+  color: $dark;
   font-size: clamp(1.2rem, 4vw, 1.6rem);
   // align-items: center;
   // position: absolute;
   margin: 0 auto;
   // text-align: center;
-  border-top: 0.1px solid $darkGrey;
-  background-color: $dark;
-  padding: 10px;
+  // border-top: 0.1px solid $white;
+  background-color: $grey;
+  // margin-top: 2rem;
+  padding: 10px 20px;
   // top: 50%;
   // transform: translateY(-50%);
   .footerLink {

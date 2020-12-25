@@ -1,0 +1,150 @@
+@import "../styles/variables.scss";
+
+.mainContent{
+  a {
+    color: $darkGrey;
+  }
+
+  a:hover {
+    color: darken($darkGrey, 12%);
+    text-decoration: underline;
+    transition: 0.1s ease-in-out;
+  }
+}
+.imgContainer {
+  max-width: 800px;
+  max-height: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.textContainer {
+  max-width: 800px;
+  padding: 0 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.singlePostTitle {
+  max-width: 800px;
+  margin: 1.5rem auto 2.5rem auto;
+}
+.textContainerHeader {
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+  .singlePostDate {
+    font-size: 1.8rem;
+  }
+
+  .tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    .tagItem {
+      padding: 10px;
+      margin-right: 5px;
+      background: $grey;
+      // border-radius: 20px;
+      font-size: 1.6rem;
+      color: $dark;
+    }
+    .tagItem:hover {
+      background-color: darken($grey, 10%);
+      cursor: pointer;
+    }
+  }
+}
+
+.contentTable{
+  border: 2px solid $dark;
+  padding: 15px;
+  margin: 5px;
+  max-width: 100%;
+  background-color: lighten($grey, 4%);
+}
+
+.navigatePrevNext {
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prevPostLink, .nextPostLink {
+  width: 44%;
+  min-height: 50px;
+  padding: 17px 19px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: $grey;
+  color: $dark;
+  text-decoration: none;
+  border: 2px solid lighten($dark, 20%);
+}
+
+a.prevPostLink:hover, a.nextPostLink:hover {
+  background-color: $dark;
+  transition: 0.1s ease-out;
+  color: $white;
+}
+
+
+@media (max-width: 600px) {
+  .navigatePrevNext {
+    display: block;
+  }
+  .prevPostLink, .nextPostLink {
+    display: block;
+    width: 91%;
+    margin-top: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .prevPostLink, .nextPostLink {
+    width: 88%;
+  }
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  .textContainer {
+    padding: 0 8px;
+  }
+  .singlePostTitle {
+    font-size: 2.5rem;
+    padding: 0 1.2rem;
+    margin: 1.5rem auto 1.5rem auto;
+  }
+  .textContainerHeader {
+      margin-top: 1rem;
+    a {
+      margin-top: 1.2rem;
+      .tagItem {
+        padding: 5px 20px;
+        font-size: 1.5rem;
+        border-radius: 0px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height: 3rem;
+      }
+      .tagItem:hover {
+        background-color: darken($grey, 10%);
+      }
+    }
+  }
+}

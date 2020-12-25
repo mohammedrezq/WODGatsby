@@ -1,28 +1,38 @@
 const path = require("path");
+var _ = require('lodash');
+
 
 module.exports.createPages = async function ({ actions, graphql }) {
   const { createPage } = actions;
 
   const { data } = await graphql(`
     query {
-      allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      allPosts: allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             frontmatter {
               slug
               title
+              tags
             }
             id
           }
         }
       }
+      tagsGroup: allMdx(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
     }
   `);
 
-  // Create paginatied pages for posts
-  const postsPerPage = 4
 
-  const numPages = Math.ceil(data.allMdx.edges.length / postsPerPage)
+
+  // Create paginatied pages for posts
+  const postsPerPage = 4;
+
+  const numPages = Math.ceil(data.allPosts.edges.length / postsPerPage);
 
   // console.log("NUMBER OF THE PAGES",numPages)
 
@@ -36,11 +46,11 @@ module.exports.createPages = async function ({ actions, graphql }) {
         numPages,
         currentPage: i + 1,
       },
-    })
-  })
+    });
+  });
 
   // Create single post
-  const posts = data.allMdx.edges;
+  const posts = data.allPosts.edges;
   posts.forEach((edge, index) => {
     // console.log(edge)
     const slug = edge.node.frontmatter.slug;
@@ -49,13 +59,28 @@ module.exports.createPages = async function ({ actions, graphql }) {
     createPage({
       component: path.resolve("./src/templates/singlePost.js"),
       path: `/blog/${slug}`,
-      context: { 
+      context: {
         id: id,
         slug: slug,
-        prev: index === 0 ? null : posts[index-1],
-        next: index === (posts.length - 1 )? null :  posts[index + 1],
+        prev: index === 0 ? null : posts[index - 1],
+        next: index === posts.length - 1 ? null : posts[index + 1],
         title,
       },
     });
   });
+
+  // Get tags
+
+  const tags = data.tagsGroup.group;
+  // console.log(tags);
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: path.resolve("./src/templates/tag.js"),
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
+  })
+
 };

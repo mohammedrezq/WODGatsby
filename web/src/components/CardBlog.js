@@ -9,9 +9,9 @@ const CardBlog = ({ title, excerpt, date, featureImage, href }) => {
     <div className={CardBlogStyle.cardContainer}>
       <Link to={href}>
         <div className={CardBlogStyle.headBlog}>
-          <div className={CardBlogStyle.cardImage}>
-            <Img fluid={featureImage} />
-          </div>
+           {featureImage &&<div className={CardBlogStyle.cardImage}>
+           <Img fluid={featureImage} />
+          </div>}
           <h2>{title}</h2>
         </div>
       </Link>

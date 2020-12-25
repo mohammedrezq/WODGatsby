@@ -1,0 +1,28 @@
+@import "../styles/variables.scss";
+
+.tagsContainer {
+  padding: 0 20px;
+}
+
+.allTagsList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-inline-start: 0;
+
+  a {
+    margin: 5px;
+    color: lighten($dark, 85%);
+    text-decoration: none;
+    background-color: darken($grey,60%);
+    padding: 8px;
+    transition: 0.1s ease;
+  }
+
+  a:hover{
+    text-decoration: underline;
+    color: $dark;
+    background-color: darken($grey, 8%);
+    transition: 0.1s ease;
+  }
+}

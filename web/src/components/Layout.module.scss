@@ -1,23 +1,29 @@
 @import "../styles/global.scss";
 
 .contentContainer {
-  min-height: calc(100vh - 200px);
+  // min-height: calc(100vh - 200px);
   // padding: 0 3rem;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 
-  @media(max-width: 900px) {
+  @media (max-width: 900px) {
     padding: 0;
   }
 }
 
 .Footer {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  //  display: Dflex;
+  //  display: flex;
   // justify-content: center;
   // align-items: center;
   background-color: $dark;
   font-size: 2rem;
+  padding-bottom: 3rem;
   height: 200px;
 }

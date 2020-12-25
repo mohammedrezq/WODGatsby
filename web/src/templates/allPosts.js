@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import CardBlog from "../components/CardBlog";
 import AllPostsStyles from "./allPosts.module.scss";
 import Pagination from "../components/Pagination";
+import SEO from "../components/SEO";
 
 const allPosts = ({ pageContext, data }) => {
   // console.log(data)
@@ -18,6 +19,8 @@ const allPosts = ({ pageContext, data }) => {
   console.log(posts);
 
   return (
+    <>
+    <SEO title="Blog" />
     <Layout>
       <div className={AllPostsStyles.blogsGrid}>
         {posts.map((blogPost, index) => {
@@ -26,11 +29,11 @@ const allPosts = ({ pageContext, data }) => {
               <CardBlog
                 href={`/blog/${blogPost.node.frontmatter.slug}`}
                 title={blogPost.node.frontmatter.title}
-                excerpt={blogPost.node.frontmatter.excerpt}
+                excerpt={blogPost.node.frontmatter?.excerpt}
                 featureImage={
-                  blogPost.node.frontmatter.featureImage.childImageSharp.fluid
+                  blogPost.node.frontmatter.featureImage?.childImageSharp?.fluid
                 }
-                date={blogPost.node.frontmatter.date}
+                date={blogPost.node.frontmatter?.date}
               />
             </div>
           );
@@ -38,6 +41,7 @@ const allPosts = ({ pageContext, data }) => {
       </div>
       <Pagination isFirst={isFirst} isLast={isLast} prevPage={prevPage} nextPage={nextPage} />
     </Layout>
+    </>
   );
 };
 
